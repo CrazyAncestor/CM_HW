@@ -123,6 +123,8 @@ def attractor(x10, y10, z10, c3):
     fig = plt.figure(figsize=(10, 8))
     ax = fig.add_subplot(111, projection='3d')
 
+
+
     # Set the initial state
     state1 = (x10, y10, z10)  # Set the initial state
 
@@ -226,7 +228,10 @@ def coupled_attractors(x10, y10, z10, x20, y20, z20, c3,c4):
     ax.set_zlabel('Z(t)')
 
     # Set the title
-    ax.set_title('Coupled attractors , c = '+str(c4)+ ' , c3 = '+str(c3))
+    if c4==0:
+        ax.set_title('Two attractor orbits , c3 = '+str(c3))
+    else:
+        ax.set_title('Coupled attractors , c = '+str(c4)+ ' , c3 = '+str(c3))
 
     # Display the legend
     ax.legend()
@@ -235,6 +240,8 @@ def coupled_attractors(x10, y10, z10, x20, y20, z20, c3,c4):
     plt.show()
 
 # Example usage
-attractor(0.1, 0.1, -0.1, 35)
+#attractor(-1.5, 0., 2,34)
+#attractor(1.5, 0., -2,34)
+coupled_attractors(-1.5, 0., 2, 1.5, 0., -2, 34,0.)
 #$coupled_attractors(0.1, 0.1, -0.1, 0.02, 0.04, -0.07, 25.58,0.15)
 #coupled_attractors(0.1, 0.1, -0.1, 0.02, 0.04, -0.07, 25.58,0.3)
